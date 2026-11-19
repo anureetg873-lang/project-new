@@ -1,0 +1,59 @@
+pipeline { 
+
+    agent any  // runs on any available Jenkins agent 
+
+ 
+
+    stages { 
+
+        stage('Build') { 
+
+            steps { 
+
+                echo 'Building the project...' 
+
+            } 
+
+        } 
+
+ 
+
+        stage('Test') { 
+
+            steps { 
+
+                echo 'Running tests...' 
+
+            } 
+
+        } 
+
+ 
+
+        stage('Deploy') { 
+
+            steps { 
+
+                echo 'Deploying application...' 
+
+            } 
+
+        } 
+
+    } 
+
+ 
+
+    post { 
+
+        always { 
+
+            echo 'Cleaning up workspace...' 
+
+            cleanWs() 
+
+        } 
+
+    } 
+
+} 
